@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            background-color: #212121;
+        }
+
+        
+        #wraper{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
+            height: 300px;
+            width: 400px;
+            background-color: #212121;
+            perspective: 500px;
+
+        }
+
+        #card{
+            height: 300px;
+            width: 400px;
+            background: url(./withBg.png);
+            background-size: cover;
+            background-position: center;
+            border-radius: 20px;
+            transition: 0.4s ease-in-out;
+        }
+
+        #card:hover{
+            filter: blur(5px);
+            rotate: 1 0 0 20deg;
+            translate: 0 -10px;
+        }
+
+
+        img{ 
+            scale: .89;
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            pointer-events: none;
+            translate: -50% -75%;
+            opacity: 0;
+            transition: 0.4s;
+            filter: drop-shadow(5px 5px  100px rgb(255, 255, 255)) drop-shadow( 0px 0px 5px rgb(49, 0, 114));
+        }
+
+        #card:hover ~ img{
+            scale: 1.05;
+            rotate: 0deg;
+            translate: -55% -85%;
+            opacity: 100;
+            animation: photo;
+        }
+
+        h1{
+            opacity: 0;
+            color: #fff;
+            transition: 0.5s;
+            font-size: 3rem;
+            pointer-events: none;
+        }
+
+        #card:hover ~ h1{
+            opacity: 100;
+            translate: 0 -150px;
+        }
+
+
+
+    </style>
+
+</head>
+<body>
+    <div id="wraper">
+        <div id="card">
+        </div>
+        <img src="./withoutbg.png" alt="">
+        <h1>hello ji I am the <span style="font-weight:900;">Boos</span></h1>
+    </div>
+</body>
+</html>
